@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 max_depth = 10
 n_estimators = 150
 
-mlflow.set_experiment('ml_demo')
+mlflow.set_experiment('ml_flow_v1')
 
 # Start an Mlflow run
 with mlflow.start_run(run_name='jvr'):
@@ -63,8 +63,8 @@ with mlflow.start_run(run_name='jvr'):
     
     mlflow.log_artifact(__file__) # Log the code
 
-    #log the model
-    mlflow.sklearn.log_model(rf,"RandomForest")
+    # #log the model
+    # mlflow.sklearn.log_model(rf,"RandomForest")
 
     #set tags 
     mlflow.set_tag('Author','MUKU')
